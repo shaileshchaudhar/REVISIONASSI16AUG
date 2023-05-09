@@ -1,0 +1,52 @@
+<h1 class="mx-5 my-2">StudentList</h1>
+<table mat-table [dataSource]="studentList" class="mat-elevation-z8 my-3"style="width:100%;" >
+    <ng-container matColumnDef="StudentId">
+        <th mat-header-cell *matHeaderCellDef>StudentId</th>
+        <td mat-cell *matCellDef="let element"> {{element.StudentId}} </td>
+      </ng-container> 
+    <ng-container matColumnDef="FullName">
+        <th mat-header-cell *matHeaderCellDef>FullName</th>
+        <td mat-cell *matCellDef="let element"> {{element.FirstName+" "+element.MiddleName+" "+element.LastName}} </td>
+      </ng-container> 
+    <ng-container matColumnDef="Class">
+        <th mat-header-cell *matHeaderCellDef>Class</th>
+        <td mat-cell *matCellDef="let element"> {{element.Class}} </td>
+      </ng-container> 
+    <ng-container matColumnDef="RollNo">
+        <th mat-header-cell *matHeaderCellDef>RollNo</th>
+        <td mat-cell *matCellDef="let element">{{element.RollNo}}</td>
+      </ng-container> 
+    <ng-container matColumnDef="Math">
+        <th mat-header-cell *matHeaderCellDef>Math</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.Math>35?'':'red'">{{element.Math}} </td>
+      </ng-container> 
+    <ng-container matColumnDef="English">
+        <th mat-header-cell *matHeaderCellDef>English</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.English>35?'':'red'">{{element.English}} </td>
+      </ng-container> 
+    <ng-container matColumnDef="Hindi">
+        <th mat-header-cell *matHeaderCellDef>Hindi</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.Hindi>35?'':'red'">{{element.Hindi}}</td>
+      </ng-container> 
+    <ng-container matColumnDef="Science">
+        <th mat-header-cell *matHeaderCellDef>Science</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.Science>35?'':'red'">{{element.Science}}</td>
+      </ng-container> 
+    <ng-container matColumnDef="Drawing">
+        <th mat-header-cell *matHeaderCellDef>Drawing</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.Drawing>35?'':'red'">{{element.Drawing}}</td>
+      </ng-container> 
+      <ng-container matColumnDef="Total">
+        <th mat-header-cell *matHeaderCellDef> Total Marks</th>
+        <td mat-cell *matCellDef="let element" [ngClass]="element.Math + element.English +
+        element.Hindi + element.Science + element.element<250?'blue':element.Math + element.English +
+        element.Hindi +element.Science + element.Drawing>450?'green':''"> {{element.Math +element.English +
+          element.Hindi + element.Science + element.Drawing}}</td>
+    </ng-container> 
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr> 
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+      
+    
+
+      
+</table>
